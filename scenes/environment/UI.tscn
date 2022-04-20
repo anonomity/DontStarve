@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Fonts/Roboto-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/UI/day_night_UI.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/psych_level.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/hunger_bar.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/health_bar.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.662745, 0.662745, 0.662745, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.670588, 0.12549, 0.12549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.839216, 0.427451, 0.0980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.717647, 0.576471, 0.156863, 1 )
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="day_night_node" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="day_night_pic" type="TextureRect" parent="Control/day_night_node"]
+margin_left = 874.0
+margin_top = -1.0
+margin_right = 1002.0
+margin_bottom = 127.0
+texture = ExtResource( 2 )
+
+[node name="current_day" type="RichTextLabel" parent="Control/day_night_node"]
+margin_left = 920.0
+margin_top = 47.0
+margin_right = 969.0
+margin_bottom = 70.0
+mouse_filter = 1
+custom_fonts/normal_font = SubResource( 1 )
+text = "Day 1
+"
+scroll_active = false
+
+[node name="heatlh_level" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/heatlh_level"]
+margin_left = 1000.0
+margin_top = 96.0
+margin_right = 1028.0
+margin_bottom = 124.0
+rect_rotation = 90.0
+mouse_filter = 1
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 100.0
+rounded = true
+percent_visible = false
+
+[node name="health" type="TextureRect" parent="Control/heatlh_level"]
+margin_left = 967.0
+margin_top = 90.0
+margin_right = 1031.0
+margin_bottom = 154.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="heatlh_level2" type="Control" parent="Control"]
+margin_left = -43.0
+margin_top = 18.0
+margin_right = -3.0
+margin_bottom = 58.0
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/heatlh_level2"]
+margin_left = 1000.0
+margin_top = 96.0
+margin_right = 1028.0
+margin_bottom = 124.0
+rect_rotation = 90.0
+mouse_filter = 2
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 4 )
+value = 100.0
+rounded = true
+percent_visible = false
+
+[node name="health" type="TextureRect" parent="Control/heatlh_level2"]
+margin_left = 967.0
+margin_top = 90.0
+margin_right = 1031.0
+margin_bottom = 154.0
+rect_scale = Vector2( 0.6, 0.6 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+
+[node name="heatlh_level3" type="Control" parent="Control"]
+margin_left = 874.0
+margin_top = 89.0
+margin_right = 914.0
+margin_bottom = 129.0
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/heatlh_level3"]
+margin_left = 34.9999
+margin_top = 8.0
+margin_right = 62.9999
+margin_bottom = 36.0
+rect_rotation = 90.0
+mouse_filter = 2
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 4 )
+value = 100.0
+rounded = true
+percent_visible = false
+
+[node name="health" type="TextureRect" parent="Control/heatlh_level3"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 66.9999
+margin_bottom = 65.0
+rect_scale = Vector2( 0.6, 0.6 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
